@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import todoRoutes from './app/routes/todoRoutes';
+import todoRoutes from './application/routes/todoRoutes';
 import mongoose from 'mongoose';
 
 dotenv.config();
