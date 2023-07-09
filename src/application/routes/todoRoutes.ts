@@ -1,11 +1,13 @@
 import express from 'express';
 import { TodoController } from '../controllers/todoController';
 import { TodoService } from '../services/todoService';
-import { TodoRepository } from '../../domain/repositories/todoRepository';
+
 import { TodoModel } from '../../infrastructure/persistence/todoModel';
+import { TodoRepositoryImpl } from '../../infrastructure/persistence/todoRepositoryImpl';
+
 
 const router = express.Router();
-const todoRepository = new TodoRepository(TodoModel); // Dependency Injection can be used here
+const todoRepository = new TodoRepositoryImpl(TodoModel); // Dependency Injection can be used here
 const todoService = new TodoService(todoRepository);
 const todoController = new TodoController(todoService);
 
